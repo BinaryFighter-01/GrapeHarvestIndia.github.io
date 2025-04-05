@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrapeHarvest India - Buy Fresh Grapes Online</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <button class="chatbot-toggle" onclick="toggleChatbot()">🍇</button>
+    <div class="chatbot-container" id="chatbot">
+        <div class="chatbot-header">
+            Grape Chatbot
+            <button class="chatbot-close" onclick="toggleChatbot()">✖</button>
+        </div>
+        <div class="chatbot-body" id="chatbox">
+            <div class="message bot-message">Hello! Ask me about any grape variety (e.g., "Thompson Seedless").</div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="input" placeholder="Type your question..."
+                onkeypress="if(event.key === 'Enter') sendMessage()">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+
+    <!-- Header -->
+    <header class="sticky">
+        <div class="logo">GrapeHarvest India</div>
+        <nav>
+            <ul>
+                <li><a href="static/chat.html">Shop</a></li>
+                <li><a href="index.html">Shop</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#" id="cart-toggle">Cart (<span id="cart-count">0</span>)</a></li>
+                <li><a href="signup.html" id="signup-link">Sign Up</a></li>
+                <li><a href="login.html" id="login-link">Login</a></li>
+                <li><a href="dashboard.html" id="profile-link" style="display: none;">My Profile</a></li>
+                <li><a href="#" id="logout-link" style="display: none;">Logout</a></li>
+            </ul>
+        </nav>
+        <input type="text" id="search-bar" placeholder="Search grapes...">
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to GrapeHarvest India</h1>
+        <p>Fresh grapes from Nashik, delivered to you.</p>
+    </section>
+
+
+    <!-- Banner -->
+    <section class="banner">
+        <h1> Premium Indian Grapes, Just for You!</h1>
+        <button class="shop-now">Shop Now</button>
+    </section>
+
+    <!-- Filters -->
+    <section class="filters">
+        <h3>Filter Grapes</h3>
+        <select id="color-filter">
+            <option value="all">All Colors</option>
+            <option value="green">Green</option>
+            <option value="red">Red</option>
+            <option value="black">Black</option>
+        </select>
+        <select id="price-filter">
+            <option value="all">All Prices</option>
+            <option value="0-150">₹0 - ₹150</option>
+            <option value="150-200">₹150 - ₹200</option>
+            <option value="200+">₹200+</option>
+        </select>
+    </section>
+
+    <!-- Products Section -->
+    <section id="shop" class="products">
+        <h2>Our Grapes</h2>
+        <div class="product-grid" id="product-grid">
+
+            <div class="product" data-color="green" data-price="150">
+                <img src="images/Thompson Seedless.jpeg" alt="Thompson Seedless">
+                <h3>Thompson Seedless</h3>
+                <p>₹150 / 500g</p>
+                <button class="add-to-cart" data-name="Thompson Seedless" data-price="150">Add to Cart</button>
+            </div>
+
+            <div class="product" data-color="red" data-price="180">
+                <img src="images/Flame Seedless.jpg" alt="Flame Seedless">
+                <h3>Flame Seedless</h3>
+                <p>₹180 / 500g</p>
+                <button class="add-to-cart" data-name="Flame Seedless" data-price="180">Add to Cart</button>
+            </div>
+            <div class="product" data-color="black" data-price="120">
+                <img src="images/Bangalore Blue.jpeg" alt="Bangalore Blue">
+                <h3>Bangalore Blue</h3>
+                <p>₹120 / 500g</p>
+                <button class="add-to-cart" data-name="Bangalore Blue" data-price="120">Add to Cart</button>
+            </div>
+            <div class="product" data-color="green" data-price="200">
+                <img src="images/Sharad Seedless.jpeg" alt="Sharad Seedless">
+                <h3>Sharad Seedless</h3>
+                <p>₹200 / 500g</p>
+                <button class="add-to-cart" data-name="Sharad Seedless" data-price="200">Add to Cart</button>
+            </div>
+
+            <div class="product" data-color="green" data-price="160">
+                <img src="images/Perlette.jpeg" alt="Perlette">
+                <h3>Perlette</h3>
+                <p>₹160 / 500g</p>
+                <button class="add-to-cart" data-name="Perlette" data-price="160">Add to Cart</button>
+            </div>
+
+            <div class="product" data-color="red" data-price="170">
+                <img src="images/Red Globe.jpeg" alt="Red Globe">
+                <h3>Red Globe</h3>
+                <p>₹170 / 500g</p>
+                <button class="add-to-cart" data-name="Red Globe" data-price="170">Add to Cart</button>
+            </div>
+
+            <div class="product" data-color="black" data-price="140">
+                <img src="images/Kyoho.jpeg" alt="Kyoho">
+                <h3>Kyoho</h3>
+                <p>₹140 / 500g</p>
+                <button class="add-to-cart" data-name="Kyoho" data-price="140">Add to Cart</button>
+            </div>
+
+            <div class="product" data-color="green" data-price="190">
+                <img src="images/Italia.jpeg" alt="Italia">
+                <h3>Italia</h3>
+                <p>₹190 / 500g</p>
+                <button class="add-to-cart" data-name="Italia" data-price="190">Add to Cart</button>
+            </div>
+
+            <div class="product" data-color="red" data-price="210">
+                <img src="images/Crimson Seedless.jpeg" alt="Crimson Seedless">
+                <h3>Crimson Seedless</h3>
+                <p>₹210 / 500g</p>
+                <button class="add-to-cart" data-name="Crimson Seedless" data-price="210">Add to Cart</button>
+            </div>
+
+            <div class="product" data-color="black" data-price="130">
+                <img src="images/Autumn Royal.jpg" alt="Autumn Royal">
+                <h3>Autumn Royal</h3>
+                <p>₹130 / 500g</p>
+                <button class="add-to-cart" data-name="Autumn Royal" data-price="130">Add to Cart</button>
+            </div>
+
+            <div class="product" data-color="green" data-price="180">
+                <img src="images/Sultana.jpg" alt="Sultana">
+                <h3>Sultana</h3>
+                <p>₹180 / 500g</p>
+                <button class="add-to-cart" data-name="Sultana" data-price="180">Add to Cart</button>
+            </div>
+
+            <div class="product" data-color="red" data-price="220">
+                <img src="images/Ruby Seedless.jpeg" alt="Ruby Seedless">
+                <h3>Ruby Seedless</h3>
+                <p>₹220 / 500g</p>
+                <button class="add-to-cart" data-name="Ruby Seedless" data-price="220">Add to Cart</button>
+            </div>
+
+            <div class="product" data-color="black" data-price="150">
+                <img src="images/Moon Drops.jpg" alt="Moon Drops">
+                <h3>Moon Drops</h3>
+                <p>₹150 / 500g</p>
+                <button class="add-to-cart" data-name="Moon Drops" data-price="150">Add to Cart</button>
+            </div>
+
+            <div class="product" data-color="green" data-price="195">
+                <img src="images/Lakemont.jpeg" alt="Lakemont">
+                <h3>Lakemont</h3>
+                <p>₹195 / 500g</p>
+                <button class="add-to-cart" data-name="Lakemont" data-price="195">Add to Cart</button>
+            </div>
+
+            <div class="product" data-color="red" data-price="205">
+                <img src="images/Scarlet Royal.jpeg" alt="Scarlet Royal">
+                <h3>Scarlet Royal</h3>
+                <p>₹205 / 500g</p>
+                <button class="add-to-cart" data-name="Scarlet Royal" data-price="205">Add to Cart</button>
+            </div>
+
+            <div class="product" data-color="black" data-price="175">
+                <img src="images/Concord.jpeg" alt="Concord">
+                <h3>Concord</h3>
+                <p>₹175 / 500g</p>
+                <button class="add-to-cart" data-name="Concord" data-price="175">Add to Cart</button>
+            </div>
+
+            <div class="product" data-color="green" data-price="185">
+                <img src="images/Himrod.jpeg" alt="Himrod">
+                <h3>Himrod</h3>
+                <p>₹185 / 500g</p>
+                <button class="add-to-cart" data-name="Himrod" data-price="185">Add to Cart</button>
+            </div>
+
+            <div class="product" data-color="red" data-price="225">
+                <img src="images/Cardinal.jpeg" alt="Cardinal">
+                <h3>Cardinal</h3>
+                <p>₹225 / 500g</p>
+                <button class="add-to-cart" data-name="Cardinal" data-price="225">Add to Cart</button>
+            </div>
+
+            <div class="product" data-color="black" data-price="165">
+                <img src="images/Black Muscat.jpg" alt="Black Muscat">
+                <h3>Black Muscat</h3>
+                <p>₹165 / 500g</p>
+                <button class="add-to-cart" data-name="Black Muscat" data-price="165">Add to Cart</button>
+            </div>
+
+            <div class="product" data-color="black" data-price="180">
+                <img src="images/Super.jpg" alt="Super">
+                <h3>Super</h3>
+                <p>₹165 / 500g</p>
+                <button class="add-to-cart" data-name="Super" data-price="165">Add to Cart</button>
+            </div>
+
+            <div class="product" data-color="black" data-price="195">
+                <img src="images/Anuska.jpg" alt="Anuska">
+                <h3>Anuska</h3>
+                <p>₹165 / 500g</p>
+                <button class="add-to-cart" data-name="Anuska" data-price="165">Add to Cart</button>
+            </div>
+
+
+
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <p>Total: ₹<span id="cart-total">0</span></p>
+        <button id="checkout-btn">Proceed to Checkout</button>
+        <button id="close-cart">Close</button>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <h2>Checkout</h2>
+            <form id="checkout-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                <label for="address">Address:</label>
+                <textarea id="address" required></textarea>
+                <label for="payment">Payment Method:</label>
+                <select id="payment">
+                    <option value="cod">Cash on Delivery</option>
+                    <option value="upi">UPI</option>
+                    <option value="card">Credit/Debit Card</option>
+                </select>
+                <button type="submit">Place Order</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Add Social Media and Location Section -->
+    <section class="pre-footer">
+        <div class="location">
+            <h3>Our Location</h3>
+            <p>Nashik, Maharashtra, India</p>
+        </div>
+        <div class="social-media">
+            <h3>Follow Us</h3>
+            <a href="https://facebook.com" target="_blank" class="social-icon fb"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank" class="social-icon insta"><i
+                    class="fab fa-instagram"></i></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Contact: support@grapeharvestindia.com | +91 98765 43210</p>
+        <p>© 2025 GrapeHarvest India. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
