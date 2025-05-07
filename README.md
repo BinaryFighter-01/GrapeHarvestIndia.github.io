@@ -21,7 +21,7 @@ GrapeHarvest-India/├── images/                   # Contains images of grap
 ## Installation
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/grapeharvest-india.git
+   git clone https://github.com/BinaryFighter-01/grapeharvest-india.git
 
 
 Navigate to Project Directory:cd grapeharvest-india
