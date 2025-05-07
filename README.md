@@ -29,7 +29,7 @@ GrapeHarvest-India/
 
 Installation
 
-Clone the Repository:git clone https://github.com/your-username/grapeharvest-india.git
+Clone the Repository:git clone https://github.com/BinaryFighter-01/grapeharvest-india.git
 
 
 Navigate to Project Directory:cd grapeharvest-india
