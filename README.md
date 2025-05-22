@@ -71,11 +71,6 @@ Make your changes and commit (git commit -m "Add feature").
 Push to the branch (git push origin feature-branch).
 Create a Pull Request.
 
-Contact
-For support or inquiries, reach out to:
-
-Email: support@grapeharvestindia.com
-Phone: +91 98765 43210
 
 License
 © 2025 GrapeHarvest India. All rights reserved.```
